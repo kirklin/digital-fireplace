@@ -217,7 +217,7 @@
   opacity: 0.9;
   transform-origin: center bottom;
   animation: flicker 1.5s infinite alternate;
-  box-shadow: 
+  box-shadow:
     0 0 80px 15px rgba(255, 102, 0, 0.7),
     0 0 30px 10px rgba(255, 165, 0, 0.7);
 }
@@ -272,7 +272,8 @@
 }
 
 @keyframes flicker {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1) rotate(2deg);
     opacity: 0.8;
   }
@@ -314,7 +315,8 @@
 
 /* 文件燃烧动画 */
 @keyframes flicker {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.8;
   }
   50% {
@@ -349,14 +351,14 @@
 }
 
 .burning-edges::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background: radial-gradient(
-    circle at var(--x, 50%) var(--y, 50%), 
+    circle at var(--x, 50%) var(--y, 50%),
     transparent 20px,
     rgba(255, 102, 0, 0.3) 25px,
     rgba(255, 102, 0, 0.1) 30px,
@@ -367,17 +369,18 @@
 }
 
 .burning-edges::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -2px;
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(45deg, 
-    transparent 30%, 
-    rgba(255, 165, 0, 0.4) 40%, 
-    rgba(255, 102, 0, 0.6) 50%, 
-    rgba(255, 30, 0, 0.4) 60%, 
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 165, 0, 0.4) 40%,
+    rgba(255, 102, 0, 0.6) 50%,
+    rgba(255, 30, 0, 0.4) 60%,
     transparent 70%
   );
   filter: blur(2px);
@@ -391,13 +394,13 @@
 }
 
 .ashes-effect::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
+  background:
     radial-gradient(circle at 30% 40%, rgba(50, 50, 50, 0.4) 5px, transparent 8px),
     radial-gradient(circle at 70% 30%, rgba(50, 50, 50, 0.4) 4px, transparent 6px),
     radial-gradient(circle at 50% 60%, rgba(50, 50, 50, 0.4) 3px, transparent 8px);
