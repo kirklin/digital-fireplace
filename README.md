@@ -30,6 +30,10 @@
 
 将那些不再需要的文件、照片或文档拖入火焰，看着它们"燃烧"，伴随着舒缓的噼啪声，给人一种治愈和放松的感觉。
 
+## 致谢
+
+本项目基于 [boot-nextjs](https://github.com/kirklin/boot-nextjs)
+
 ## 许可证
 
 MIT
