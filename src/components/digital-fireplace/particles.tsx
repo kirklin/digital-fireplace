@@ -11,6 +11,7 @@ interface Particle {
   life: number;
   maxLife: number;
   color: string;
+  glow: number;
 }
 
 interface FireParticlesProps {
@@ -61,6 +62,7 @@ export default function FireParticles({ isFireBig = false }: FireParticlesProps)
         "rgba(255, 204, 0, 0.8)",
         "rgba(255, 50, 0, 0.7)",
         "rgba(255, 255, 0, 0.6)",
+        "rgba(255, 220, 50, 0.7)", // 新增更亮的黄色粒子
       ];
 
       const colors = isFireBig ? bigFireColors : baseColors;
@@ -74,6 +76,7 @@ export default function FireParticles({ isFireBig = false }: FireParticlesProps)
         life: 0,
         maxLife: Math.random() * 60 + (isFireBig ? 90 : 60), // 火焰变大时，粒子寿命更长
         color: colors[Math.floor(Math.random() * colors.length)],
+        glow: Math.random() * 5 + 3, // 粒子发光半径
       };
 
       particles.push(particle);
@@ -106,10 +109,32 @@ export default function FireParticles({ isFireBig = false }: FireParticlesProps)
         // 粒子变淡
         p.life++;
 
-        // 画粒子
+        // 发光效果 - 先绘制光晕
+        const alpha = 1 - p.life / p.maxLife;
+        if (p.glow > 0) {
+          const gradient = ctx.createRadialGradient(
+            p.x,
+            p.y,
+            0,
+            p.x,
+            p.y,
+            p.glow,
+          );
+
+          const color = p.color.replace(/[\d.]+\)$/, `${alpha * 0.5})`);
+          gradient.addColorStop(0, color);
+          gradient.addColorStop(1, "rgba(255, 165, 0, 0)");
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.glow, 0, Math.PI * 2);
+          ctx.fillStyle = gradient;
+          ctx.fill();
+        }
+
+        // 画粒子主体
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = p.color.replace("0.8", `${1 - p.life / p.maxLife}`);
+        ctx.fillStyle = p.color.replace(/[\d.]+\)$/, `${alpha})`);
         ctx.fill();
 
         // 如果粒子寿命结束或太小，从数组中移除

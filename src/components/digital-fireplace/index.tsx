@@ -85,7 +85,6 @@ export default function DigitalFireplace() {
         <div className="relative w-64 h-80">
           <div className="absolute inset-0 flex items-center justify-center">
             <div className={`fireplace transition-all duration-1000 ${isFireBig ? "scale-125" : ""}`}>
-              <div className="fire-base"></div>
               <div className={`flames transition-all duration-1000 ${isFireBig ? "scale-125 h-[250px]" : ""}`}>
                 <div className="flame"></div>
                 <div className="flame"></div>
@@ -102,6 +101,32 @@ export default function DigitalFireplace() {
               {burningFiles.length > 0 && (
                 <BurningFiles files={burningFiles} onFileBurned={handleFileBurned} />
               )}
+            </div>
+
+            {/* 火焰投射的光效 */}
+            <div
+              className={`absolute bottom-6 left-1/2 -translate-x-1/2 -z-10 transition-all duration-1000
+                ${isFireBig ? "scale-125" : ""}`}
+            >
+              {/* 火焰照亮的地面区域 */}
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-[200px] h-[30px] rounded-[50%] transform-gpu overflow-hidden">
+                <div
+                  className="w-full h-full rounded-[50%] absolute animate-pulse"
+                  style={{
+                    background: "radial-gradient(ellipse at center, rgba(255, 160, 60, 0.5) 0%, rgba(255, 100, 0, 0.25) 50%, rgba(0, 0, 0, 0) 80%)",
+                    filter: "blur(5px)",
+                  }}
+                >
+                </div>
+                <div
+                  className="w-[140px] h-full mx-auto rounded-[50%] absolute left-1/2 -translate-x-1/2 animate-flicker"
+                  style={{
+                    background: "radial-gradient(ellipse at center, rgba(255, 200, 70, 0.4) 0%, rgba(255, 140, 20, 0.15) 60%, rgba(0, 0, 0, 0) 80%)",
+                    filter: "blur(3px)",
+                  }}
+                >
+                </div>
+              </div>
             </div>
           </div>
         </div>

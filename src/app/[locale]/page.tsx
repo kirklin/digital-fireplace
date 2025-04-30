@@ -14,7 +14,7 @@ export default function HomePage({
   setRequestLocale(locale);
 
   return (
-    <main className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-black">
+    <main className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-background dark:bg-black">
       {/* 主题切换按钮 */}
       <div className="absolute top-4 right-4 z-20">
         <ModeToggle />
