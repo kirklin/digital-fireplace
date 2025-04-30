@@ -65,7 +65,7 @@ export default function DigitalFireplace() {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   return (
-    <div className="relative flex flex-col items-center justify-center w-full h-full">
+    <div className="relative flex flex-col items-center justify-center w-full h-full bg-black rounded-xl p-8">
       {/* 音频控制 */}
       <FireplaceSound />
 
@@ -84,6 +84,9 @@ export default function DigitalFireplace() {
         {/* 火焰动画 */}
         <div className="relative w-64 h-80">
           <div className="absolute inset-0 flex items-center justify-center">
+            {/* 添加深色背景以确保火焰能清晰可见 */}
+            <div className="absolute inset-0 bg-black/40 rounded-lg -z-10"></div>
+
             <div className={`fireplace transition-all duration-1000 ${isFireBig ? "scale-125" : ""}`}>
               <div className={`flames transition-all duration-1000 ${isFireBig ? "scale-125 h-[250px]" : ""}`}>
                 <div className="flame"></div>
