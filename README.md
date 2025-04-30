@@ -1,38 +1,39 @@
-# Boot Next.js
+# 数字壁炉 (Digital Fireplace)
 
-This is a [Next.js](https://nextjs.org/) project
+一个互动网页应用，让用户可以将文件拖入火焰中，伴随着壁炉火燃烧的噼啪声，给人一种仪式感和解压体验。
 
-## Getting Started
+## 功能特点
 
-First, run the development server:
+- 🔥 逼真的火焰效果，带有动画和粒子效果
+- 🔊 舒缓的壁炉火燃烧白噪音
+- 📁 支持拖拽任何文件到火焰中"燃烧"
+- ✨ 有趣的文件燃烧动画效果
+- 🌙 默认黑暗主题，给人沉浸式体验
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 技术栈
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Next.js 15
+- React 19
+- TailwindCSS 4
+- React-Dropzone
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 使用方法
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. 克隆仓库
+2. 安装依赖：`pnpm install`
+3. 开发模式运行：`pnpm dev`
+4. 构建项目：`pnpm build`
 
-## Learn More
+## 寓意
 
-To learn more about Next.js, take a look at the following resources:
+在信息爆炸的时代，有时我们需要一种仪式感来告别数字垃圾。这个数字壁炉提供了一种视觉上和听觉上的满足，帮助用户在删除文件时获得一种完成感和释放感。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+将那些不再需要的文件、照片或文档拖入火焰，看着它们"燃烧"，伴随着舒缓的噼啪声，给人一种治愈和放松的感觉。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 许可证
 
-## Deploy on Vercel
+MIT
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 作者
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[Kirk Lin](https://github.com/kirklin)
